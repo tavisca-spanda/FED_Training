@@ -17,14 +17,14 @@
     <ul>
       <li><a href="#">TO DO</a></li>
       <li><a href="#">Login</a></li>
-      <li><a href="#">Tokyo</a></li>
+      <li><a href="#">Sign up</a></li>
     </ul>
   </nav>
   
   <article>
     <div class="search-container">
       <form autocomplete="on">
-          <input type="text" placeholder="Search For City......." name="search-text" id="text">
+          <input type="text" placeholder="Search For Task......." name="search-text" id="text">
           <button type="button" name="search" onclick="searchTasks()">search</button>
           <button type="button" name="Add_value" onclick="add()">Add</button>
 
@@ -51,10 +51,18 @@
 
   function searchTasks(){
     var x=document.getElementById("text").value;
-    if(tasks.findIndex(x)==-1)
+    var i=0;
+    for(i=0;i<tasks.length;i++)
+    {
+      if(tasks[i]==x)
+      {
+        alert("To Do: "+x);
+        break;
+      }
+    }
+    if(i==tasks.length)
       alert("Not Found");
-    else 
-      alert("Do"+x);
+    document.getElementById("text").value = "";
   }
   function add(){ 
     var inputValue=document.getElementById("text").value;
@@ -67,7 +75,7 @@
         var li = document.createElement("li");
         var node = document.createTextNode(inputValue);
         li.appendChild(node);
-        document.getElementById("taks").appendChild(li);
+        document.getElementById("tasks").appendChild(li);
         tasks.push(inputValue);
 
       }
