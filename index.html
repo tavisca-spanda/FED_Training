@@ -15,7 +15,7 @@
 <section>
   <nav>
     <ul>
-      <li><a href="#" onclick="">TO DO</a></li>
+      <li><a href="#">TO DO</a></li>
       <li><a href="#">Login</a></li>
       <li><a href="#">Tokyo</a></li>
     </ul>
@@ -23,9 +23,23 @@
   
   <article>
     <div class="search-container">
-      <input type="text" placeholder="Search For City......." name="search" id="text">
-      <button type="button" name="search" value="search" onclick="search()">search</button>
-      <button type="button" name="Add_value" onclick="add()">Add</button>
+      <form autocomplete="on">
+          <input type="text" placeholder="Search For City......." name="search-text" id="text">
+          <button type="button" name="search" onclick="searchTasks()">search</button>
+          <button type="button" name="Add_value" onclick="add()">Add</button>
+
+      </form>
+      
+    </div>
+    <div>
+        <ol id="tasks" >
+            
+            <li class="checked">Breakfast</li>
+            <li class="checked">Meet Shomu</li>
+            <li class="checked">Buy Grocery</li>
+            <li class="checked">Finish Assignments</li>
+            <li class="checked">Laundry</li>
+        </ol>
     </div>
   </article>
 </section>
@@ -33,6 +47,38 @@
 <footer>
   <p>Footer</p>
 </footer>
-<script type="script/javascript" src="Script.js"></script>
+<script>
+
+  function searchTasks(){
+    var x=document.getElementById("text").value;
+    if(tasks.findIndex(x)==-1)
+      alert("Not Found");
+    else 
+      alert("Do"+x);
+  }
+  function add(){ 
+    var inputValue=document.getElementById("text").value;
+
+
+    if (inputValue === '') {
+        alert("Field is empty!");
+      } else {
+
+        var li = document.createElement("li");
+        var node = document.createTextNode(inputValue);
+        li.appendChild(node);
+        document.getElementById("taks").appendChild(li);
+        tasks.push(inputValue);
+
+      }
+
+      document.getElementById("text").value = ""; 
+  }
+
+  
+
+  
+var tasks=["Breakfast","Meet Shomu","Buy Grocery","Finish Assignments","Laundry"];
+</script>
 </body>
 </html>
