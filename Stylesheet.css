@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+ body {
+  font-family: Arial, Helvetica, sans-serif;
+} 
+header {
+  background-color: #6334e2;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+
+footer {
+   background-color: #777fff;
+   position: fixed;
+   padding: 10px 20px;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+  
+}
+
+
+a:link {
+    color: green; 
+    background-color: transparent; 
+    text-decoration: none;
+  }
+  
+  
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+
+  section {
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    height: 80%;
+    width: 100%;
+  }
+  
+
+  nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #ccc;
+    padding: 10px;
+    height: 100%;
+  }
+  
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+
+  .checked{
+    padding: 10px;
+  }
+
+  #datalist
+  {
+    position: absolute;
+     
+    z-index: 99; 
+    
+    cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+  width: 16%;
+  
+  }
+
+  input
+  {
+    border: 1px solid ;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button
+  {
+    background-color: DodgerBlue;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+  }
+
+
+  .sugeestions{
+    padding: 10px;
+    border: 1px solid ;
+  }
