@@ -1,13 +1,18 @@
 // Delete Function
 function removeElement(ele)
 {
-  console.log(ele.innerHTML);
-  var index = tasks.indexOf(ele.innerHTML);
+
+  var x=ele.innerHTML;
+  var y= x.indexOf('<');
+  var z= x.substring(0,y-1);
+  
+  
+  var index = tasks.indexOf(z);
   if (index > -1) {
     tasks.splice(index, 1);
   }
 
-  document.getElementById("tasks").removeChild(ele);
+  ele.remove();
 
 }
 
@@ -114,9 +119,12 @@ function showContent(){
     var button1= document.createElement("button");
     button1.type="button";
     button1.innerHTML="Delete";
-    button1.onclick="removeElement(this)";
+    button1.setAttribute("onclick","removeElement(this.parentElement)");
     li.append(button1);
     document.getElementById("tasks").appendChild(li);
+    
+    
+   
     
   }
 }
