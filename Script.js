@@ -64,7 +64,7 @@ function add(){
       var button1= document.createElement("button");
       button1.type="button";
       button1.innerHTML="Delete";
-      button1.onclick="removeElement(this)";
+      button1.setAttribute("onclick","removeElement(this.parentElement)");
       li.append(button1);
       document.getElementById("tasks").appendChild(li);
      
